@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loadingtext {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 500;
+  filter: contrast(550);
+  transform-style: preserve-3d;
+}
+
+.innercircle {
+  position: absolute;
+  fill: none;
+  stroke: #298cb3;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  animation: line 0.6s linear infinite;
+  transform-style: preserve-3d;
+  transition: all 1s linear;
+}
+
+.outercircle {
+  position: absolute;
+  fill: none;
+  stroke: rgb(75, 55, 150);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  animation: line2 0.7s linear infinite;
+  transform-style: preserve-3d;
+  transition: all 1s linear;
+}
+
+.cubecontainer:hover .innercircle {
+  scale: 50%;
+  transform: rotateX(40deg) rotateY(40deg);
+}
+
+.cubecontainer:hover .outercircle {
+  scale: 50%;
+  transform: rotateX(40deg) rotateY(-40deg);
+}
+
+@keyframes line {
+  from {
+    stroke-dasharray: 40% 60%;
+    stroke-dashoffset: 0%;
+  }
+
+  to {
+    stroke-dasharray: 40% 60%;
+    stroke-dashoffset: 100%;
+  }
+}
+
+@keyframes line2 {
+  from {
+    stroke-dasharray: 50% 50%;
+    stroke-dashoffset: 100%;
+  }
+
+  to {
+    stroke-dasharray: 50% 50%;
+    stroke-dashoffset: 0%;
+  }
+}
+
+.cubecontainer {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  scale: 60%;
+  transform-style: preserve-3d;
+  transform: translateZ(260px);
+  transition: all 1s ease-in-out;
+}
+
+.cubecontainer:hover {
+  scale: 100%;
+}
+
+.cubecontainer:hover .top {
+  transform: translateZ(260px);
+}
+
+.cubecontainer:hover .side1 {
+  transform: rotateY(90deg) translateX(-80px) translateZ(180px);
+}
+
+.cubecontainer:hover .side2 {
+  transform: rotateY(90deg) translateX(-80px) translateZ(-180px);
+}
+
+.cubecontainer:hover .side3 {
+  transform: rotateX(90deg) translateY(80px) translateZ(-180px);
+}
+
+.cubecontainer:hover .side4 {
+  transform: rotateX(90deg) translateY(80px) translateZ(180px);
+}
+
+.cubecontainer:hover .bottom {
+  transform: translateZ(-100px);
+}
+
+
+.cubebg {
+  background-color: rgb(255, 255, 255);
+  transform-style: preserve-3d;
+
+}
+
+.cube {
+  height: 160px;
+  width: 160px;
+  background-color: #892be200;
+  transform-style: preserve-3d;
+  animation: rotateX 3s linear infinite;
+  position: relative;
+}
+
+@keyframes rotateX {
+  from {
+    transform: rotateX(50deg) rotateY(30deg) rotateZ(100deg) translateZ(-80px);
+  }
+
+  to {
+    transform: rotateX(770deg) rotateY(390deg) rotateZ(460deg) translateZ(-80px);
+  }
+}
+
+.top {
+  position: absolute;
+  background-color: #8fb8b7;
+  height: 160px;
+  width: 160px;
+  transform-style: preserve-3d;
+  transform: translateZ(160px);
+  transition: all 1s ease-in-out;
+}
+
+.side1 {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background-color: #6f9c9c;
+  transform-style: preserve-3d;
+  transform: rotateY(90deg) translateX(-80px) translateZ(80px);
+  transition: all 1s ease-in-out;
+}
+
+.side2 {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background-color: #3e6b6b;
+  transform-style: preserve-3d;
+  transform: rotateY(90deg) translateX(-80px) translateZ(-80px);
+  transition: all 1s ease-in-out;
+}
+
+.side3 {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background-color: #225050;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateY(80px) translateZ(-80px);
+  transition: all 1s ease-in-out;
+}
+
+.side4 {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background-color: #113d3d;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateY(80px) translateZ(80px);
+  transition: all 1s ease-in-out;
+}
+
+.bottom {
+  position: absolute;
+  background-color: #042727;
+  height: 160px;
+  width: 160px;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
