@@ -96,7 +96,7 @@ function App() {
       (event.clientY - halfWindowHeight) / halfWindowWidth;
 
     setMouseX(mouseXRelativeToCenter * 90 + 45);
-    setMouseY(-mouseYRelativeToCenter * 90 + 45);
+    setMouseY(-mouseYRelativeToCenter * 180 + 45);
   }
 
   useEffect(() => {
@@ -196,7 +196,7 @@ function App() {
                 s3 ? "text-[yellow]" : "text-[black]"
               }`}
             >
-              SKILL-SET
+              TECH-STACK
             </div>
             <div
               className={`[transition:all_0.5s_linear] px-2 absolute bottom-[8%] left-[8%] ${
@@ -241,18 +241,11 @@ function App() {
           </div>
         </div>
         <div
-          className={`absolute bg-[black] w-[50%] h-max[transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
             hov && page === 2 ? "[scale:100%]" : "[scale:0%]"
           } flex items-center justify-center`}
         >
-          <div className="w-full h-max flex items-center justify-center text-[yellow] relative">
-            <div className="absolute bg-[black] w-[100%] h-max z-10 flex flex-col items-center justify-center p-6">
-              <p className="text-3xl pt-2 w-full uppercase font-bold">
-                Education -
-              </p>
-              <Education />
-            </div>
-          </div>
+          <Education />
         </div>
         <div
           className={`relative [transform:translateZ(-${

@@ -29,3 +29,23 @@
     outline-offset: 10px;
   }
 }
+
+@keyframes leftAnim {
+  from{
+    transform: translateX(80%);
+
+  }
+  to {
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes rightAnim {
+  from{
+    transform: translateX(-80%);
+
+  }
+  to {
+    transform: translateX(80%);
+  }
+}
