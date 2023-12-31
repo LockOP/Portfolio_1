@@ -1,7 +1,15 @@
 import "./App.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai";
+import { FiMinimize } from "react-icons/fi";
+import { IoHomeOutline } from "react-icons/io5";
+
 import Education from "./Components/Education";
+import TechStack from "./Components/TechStack";
+import About from "./Components/About";
+import Experience from "./Components/Experience";
+import Projects from "./Components/Projects";
+import Others from "./Components/Others";
 
 function App() {
   const [maxLength, setMaxLength] = useState(0);
@@ -125,52 +133,72 @@ function App() {
     "[position:absolute] [transform-style:preserve-3d] [transition:all_0.5s_linear]";
 
   return (
-    <div className="h-screen w-screen bg-[black] [transform-style:preserve-3d] z-50 flex items-center justify-center overflow-clip top-0 left-0">
+    <div className="tracking-[1px] h-screen w-screen bg-[black] [transform-style:preserve-3d] z-50 flex items-center justify-center overflow-clip top-0 left-0">
       <div
-        className={`absolute top-0 right-0 m-10 outline outline-2 outline-[yellow] h-10 w-10 flex items-center justify-center hover:outline-offset-[10px] z-30 ${
+        className={`absolute top-0 right-0 m-4 outline outline-2 outline-[#ffff0000] hover:outline-[yellow] h-6 w-6 flex items-center justify-center hover:outline-offset-[10px] z-30 ${
           hov ? "" : "[animation:catchAttention_0.7s_ease-out_infinite] hidden"
-        } cursor-pointer`}
+        } cursor-pointer ${page === 0 ? "hidden" : ""}`}
         onClick={() => {
-          setHov((c) => !c);
-          setPage(0);
-          setS1(false);
-          setS2(false);
-          setS3(false);
-          setS4(false);
-          setS5(false);
-          setS6(false);
+          if (hov) {
+            setPage(0);
+          }
         }}
       >
-        {hov ? (
-          <AiOutlineShrink className="text-[yellow] text-[30px]" />
-        ) : (
-          <AiOutlineExpandAlt className="text-[yellow] text-[30px]" />
-        )}
+        {hov ? <IoHomeOutline className="text-[yellow] text-[30px]" /> : <></>}
       </div>
+
       <div
         className={`flex justify-center items-center relative [transform-style:preserve-3d] [transform:translateZ(260px)] [transition:all_1s_linear] ${
           hov ? "[scale:100%]" : "[scale:40%]"
         }`}
       >
         <div
-          className={`absolute [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(-3000px)]  ${
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.4s_linear] [transform:translateZ(${
+            hov ? "3000" : "-5000"
+          }px)] ${
             hov && page === 0 ? "[scale:100%]" : "[scale:0%]"
-          } bg-[black] flex items-center justify-center`}
-          style={{ width: maxLength || mL, height: maxLength || mL }}
+          } flex items-center justify-center`}
         >
-          <div className="w-full h-full flex items-center justify-center text-[yellow] relative">
-            <div className="bg-transparent border-8 absolute border-[yellow] w-[40%] h-[30%] translate-x-[-15%]"></div>
-            <div className="absolute bg-[black] w-max h-max translate-x-[15%] z-10 flex flex-col items-start justify-center p-6">
-              <p className="text-6xl">Hi,</p>
-              <p className="text-6xl border-b-4 border-[black]">
+          <div
+            className="w-full h-full flex items-center justify-center text-[yellow] cursor-pointer group"
+            onClick={() => {
+              setHov(false);
+              setPage(0);
+              setS1(false);
+              setS2(false);
+              setS3(false);
+              setS4(false);
+              setS5(false);
+              setS6(false);
+            }}
+          >
+            <div className="w-max h-max z-10 flex flex-col items-start justify-center p-6 group">
+              <div className="flex flex-row items-center text-4xl gap-4 justify-between w-full">
+                <p>Hi,</p>{" "}
+              </div>
+              <p className="text-4xl bg-[black] border-b-2 pb-2 mb-2 border-[yellow]">
                 I'm Arul Madhava
               </p>
-              <p className="text-2xl font-bold pt-2">
+              <p className="text-xl font-bold bg-[black]">
                 Creative Front-End Developer
+              </p>
+              <p className="text-sm font-extralight tracking-[2px] pt-4 bg-[black] flex flex-row">
+                Click to{" "}
+                <p className="group-hover:font-bold">&nbsp;shrink&nbsp;</p> it
+                back !!
               </p>
             </div>
           </div>
         </div>
+        {/* <div
+          className={`absolute w-[99%] h-[50%] border border-[yellow] [transform-style:preserve-3d] [transition:all_0.5s_ease-out] [transform:translateZ(${
+            hov ? "30000px" : "-30000px"
+          })] ${
+            hov && page === 0 ? "[scale:100%]" : "[scale:0%]"
+          } flex items-center justify-center`}
+          style={{ width: maxLength || mL, height: maxLength || mL }}
+        ></div> */}
+
         <div
           className={`absolute w-full h-full bg-transparent [transform-style:preserve-3d] [transition:all_1s_linear] [transform:translateZ(${
             s1 || s2 || s3 || s4 || s5 || s6 ? "-2800" : "-3001"
@@ -217,29 +245,19 @@ function App() {
                 s6 ? "text-[yellow]" : "text-[black]"
               }`}
             >
-              MISCELLANEOUS
+              CONTACT
             </div>
           </div>
         </div>
+
         <div
-          className={`absolute bg-[black] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(-3000px)] ${
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
             hov && page === 1 ? "[scale:100%]" : "[scale:0%]"
           } flex items-center justify-center`}
-          style={{ width: maxLength || mL, height: maxLength || mL }}
         >
-          <div className="w-full h-full flex items-center justify-center text-[yellow] relative">
-            <div className="absolute bg-[black] w-[50%] h-max z-10 flex flex-col items-center justify-center p-6">
-              <p className="text-3xl pt-2 w-full uppercase font-bold">
-                About -
-              </p>
-              <p className="text-2xl pt-2 w-full">
-                With a passion for designing exceptional user experiences and a
-                solid foundation in front-end development technologies, I am
-                eager to apply my skills to contribute to your Vision . . .
-              </p>
-            </div>
-          </div>
+          <About />
         </div>
+
         <div
           className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
             hov && page === 2 ? "[scale:100%]" : "[scale:0%]"
@@ -247,6 +265,39 @@ function App() {
         >
           <Education />
         </div>
+
+        <div
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
+            hov && page === 3 ? "[scale:100%]" : "[scale:0%]"
+          } flex items-center justify-center`}
+        >
+          <TechStack />
+        </div>
+
+        <div
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
+            hov && page === 4 ? "[scale:100%]" : "[scale:0%]"
+          } flex items-center justify-center`}
+        >
+          <Experience />
+        </div>
+
+        <div
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
+            hov && page === 5 ? "[scale:100%]" : "[scale:0%]"
+          } flex items-center justify-center`}
+        >
+          <Projects />
+        </div>
+
+        <div
+          className={`absolute bg-[black] w-[99%] h-[50%] [transform-style:preserve-3d] [transition:all_0.5s_linear] [transform:translateZ(3000px)] ${
+            hov && page === 6 ? "[scale:100%]" : "[scale:0%]"
+          } flex items-center justify-center`}
+        >
+          <Others />
+        </div>
+
         <div
           className={`relative [transform:translateZ(-${
             (maxLength || mL) / 2

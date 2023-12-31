@@ -31,9 +31,8 @@
 }
 
 @keyframes leftAnim {
-  from{
+  from {
     transform: translateX(80%);
-
   }
   to {
     transform: translateX(-80%);
@@ -41,11 +40,32 @@
 }
 
 @keyframes rightAnim {
-  from{
+  from {
     transform: translateX(-80%);
-
   }
   to {
     transform: translateX(80%);
   }
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  padding: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid yellow;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: yellow;
+  border: 0px solid black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+  border: 2px solid black;
 }
