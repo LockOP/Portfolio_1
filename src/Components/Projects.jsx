@@ -53,16 +53,16 @@ function Projects() {
     },
   ];
   return (
-    <div className="text-2xl w-full flex flex-col h-full items-center gap-4 text-[yellow] pr-4 overflow-auto">
+    <div className="text-2xl w-full flex flex-col h-full items-center gap-4 text-[yellow] pr-3 overflow-auto">
       {pro.map((item) => {
         return (
           <a
             href={item.link}
             target="_blank"
             rel="noreferrer"
-            className="w-full h-max flex flex-col gap-2 border border-[yellow] py-2 px-4"
+            className="w-full h-max flex flex-col gap-1 border border-[yellow] py-1 px-3"
           >
-            <div className="text-2xl flex flex-row w-full h-max items-center justify-start gap-3">
+            <div className="text-xl flex flex-row w-full h-max items-center justify-start gap-3">
               <RiExternalLinkLine />
               <p className="capitalize">{item.name}</p>
             </div>

@@ -38,7 +38,7 @@ function TechStack() {
   /////////////// timer ends
 
   return (
-    <div className="text-2xl pt-2 w-full flex flex-col h-full items-center justify-center gap-6 text-[yellow] tracking-[1px]">
+    <div className="text-lg pt-2 w-full flex flex-col h-full items-center justify-center gap-6 text-[yellow] tracking-[1px]">
       <div
         className="w-[70%] h-max flex flex-col gap-2"
         onMouseEnter={() => {
@@ -55,7 +55,7 @@ function TechStack() {
           {dev.map((item, ind) => {
             return (
               <p
-                className={`w-max pr-2 hover:italic ${
+                className={`w-max pr-2 font-extralight hover:italic ${
                   ind === counter && running ? "italic" : ""
                 }`}
               >
@@ -70,7 +70,7 @@ function TechStack() {
           {tools.map((item, ind) => {
             return (
               <p
-                className={`w-max pr-2 hover:italic ${
+                className={`w-max pr-2 font-extralight hover:italic ${
                   ind + 1 === counter - 1 - tools.length && running
                     ? "italic"
                     : ""

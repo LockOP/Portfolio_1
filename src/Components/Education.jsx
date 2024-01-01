@@ -55,7 +55,7 @@ function Education() {
             </div>
           </div>
         </div>
-        <div className="h-full w-[60%] bg-transparent relative overflow-hidden flex items-center justify-center">
+        <div className="h-full w-[70%] bg-transparent relative overflow-hidden flex items-center justify-center">
           <div
             className={`h-max w-full px-10 bg-transparent flex flex-col items-center absolute [transition:all_0.5s_linear] text-center gap-2 ${
               ind === 0
@@ -65,16 +65,16 @@ function Education() {
                 : `translate-x-[${(0 - ind) * 100}%]`
             }`}
           >
-            <p className="text-3xl pt-2 uppercase tracking-[0.7px]">
+            <p className="text-xl pt-2 uppercase tracking-[0.7px]">
               {edArr[0].ins}
             </p>
-            <p className="text-xl pt-2 tracking-[0.7px] italic ">
+            <p className="text-lg pt-2 tracking-[0.7px] italic font-extralight">
               {edArr[0].year}
             </p>
-            <p className="text-xl pt-2 tracking-[0.7px] italic">
+            <p className="text-lg pt-1 tracking-[0.7px] italic font-extralight">
               {edArr[0].branch}
             </p>
-            <p className="text-xl pt-2 tracking-[0.7px] italic">
+            <p className="text-lg pt-1 tracking-[0.7px] italic font-extralight">
               {edArr[0].marks}
             </p>
           </div>
@@ -87,16 +87,16 @@ function Education() {
                 : `translate-x-[${(1 - ind) * 100}%]`
             }`}
           >
-            <p className="text-3xl pt-2 uppercase tracking-[0.7px]">
+            <p className="text-xl pt-2 uppercase tracking-[0.7px]">
               {edArr[1].ins}
             </p>
-            <p className="text-xl pt-2 w-full tracking-[0.7px] italic ">
+            <p className="text-lg pt-2 tracking-[0.7px] italic font-extralight">
               {edArr[1].year}
             </p>
-            <p className="text-xl pt-2 w-full tracking-[0.7px] italic">
+            <p className="text-lg pt-1 tracking-[0.7px] italic font-extralight">
               {edArr[1].branch}
             </p>
-            <p className="text-xl pt-2 w-full tracking-[0.7px] italic">
+            <p className="text-lg pt-1 tracking-[0.7px] italic font-extralight">
               {edArr[1].marks}
             </p>
           </div>
@@ -109,16 +109,16 @@ function Education() {
                 : `translate-x-[${(2 - ind) * 100}%]`
             }`}
           >
-            <p className="text-3xl pt-2 uppercase tracking-[0.7px]">
+            <p className="text-xl pt-2 uppercase tracking-[0.7px]">
               {edArr[2].ins}
             </p>
-            <p className="text-xl pt-2 w-full tracking-[0.7px] italic ">
+            <p className="text-lg pt-2 tracking-[0.7px] italic font-extralight">
               {edArr[2].year}
             </p>
-            <p className="text-xl pt-2 w-full tracking-[0.7px] italic">
+            <p className="text-lg pt-1 tracking-[0.7px] italic font-extralight">
               {edArr[2].branch}
             </p>
-            <p className="text-xl pt-2 w-full tracking-[0.7px] italic">
+            <p className="text-lg pt-1 tracking-[0.7px] italic font-extralight">
               {edArr[2].marks}
             </p>
           </div>
